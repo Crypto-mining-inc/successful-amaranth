@@ -1,0 +1,24 @@
+---
+layout: base
+---
+
+  <div id="page" class="site layout-{{ site.layout_style }} palette-{{ site.palette }}">
+
+    {% include header.html %}
+
+    <div id="content" class="site-content">
+      <main id="main" class="site-main inner">
+
+        {{ content }}
+
+      </main><!-- .site-main -->
+    </div><!-- .site-content -->
+
+    {% assign enabled_is_not_empty = site.data.subscribe.enabled | is_not_empty %}
+    {% if enabled_is_not_empty %}
+      {% include subscribe.html %}
+    {% endif %}
+
+    {% include footer.html %}
+
+  </div><!-- .site -->

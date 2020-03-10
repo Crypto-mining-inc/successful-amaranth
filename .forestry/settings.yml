@@ -1,0 +1,59 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: admin
+webhook_url: 'https://api.stackbit.com/project/5e67563d688f7500194fddcf/webhook/forestry'
+sections:
+  - type: document
+    label: Global Site Config
+    path: _config.yml
+    templates:
+      - config
+  - type: document
+    label: Social Links
+    path: _data/social.json
+    templates:
+      - social
+  - type: document
+    label: Author
+    path: _data/author.json
+    templates:
+      - author
+  - type: document
+    label: Home
+    path: index.md
+    templates:
+      - home
+  - type: document
+    label: Contact
+    path: contact.md
+    templates:
+      - contact
+  - type: directory
+    path: ''
+    match: '**/*.md'
+    exclude: '{_posts/**,README.md,LICENSE.md,index.md,contact.md}'
+    label: Page
+    create: all
+    templates:
+      - page
+  - type: jekyll-posts
+    label: Post
+    create: all
+    templates:
+      - post
+  - type: document
+    label: Subscribe
+    path: _data/subscribe.json
+    templates:
+      - subscribe
+  - type: document
+    label: Site Menus
+    path: _data/menus.yml
+    templates:
+      - site_menus
+upload_dir: images
+public_path: /images
+front_matter_path: ''
+use_front_matter_path: false
+file_template: ':filename:'
